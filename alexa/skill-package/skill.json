@@ -24,7 +24,7 @@
         }
       },
       "isAvailableWorldwide": false,
-      "testingInstructions": "Create a board in the web app, pair with its four-word code, then launch on an Echo Show. Verify the dashboard displays upcoming events, chores, and dinner; contributor taps toggle chores and viewer taps do not.",
+      "testingInstructions": "In the Alexa simulator or on an Echo Show, say: \"Alexa, ask Family Board to use board code domino badger leopard cricket.\" Then launch Family Board. The selected board is named \"Family Board Certification\" and contains the open chore \"Put toys away\" worth 2 stars plus a Groceries list containing Milk. On Echo Show, tap the chore and verify it changes to completed; tap again to restore it for the next reviewer. The widget should show the board name and remaining chore count after installation. The code belongs only to this dedicated certification fixture and contains no family data.",
       "category": "ORGANIZERS_AND_ASSISTANTS",
       "distributionCountries": ["US"]
     },
