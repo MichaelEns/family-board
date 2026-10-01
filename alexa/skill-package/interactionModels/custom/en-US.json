@@ -1,0 +1,57 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "family board",
+      "intents": [
+        {
+          "name": "LinkBoardIntent",
+          "slots": [{ "name": "boardCode", "type": "AMAZON.SearchQuery" }],
+          "samples": [
+            "use board code {boardCode}",
+            "connect board code {boardCode}",
+            "link to {boardCode}"
+          ]
+        },
+        {
+          "name": "ListBoardsIntent",
+          "slots": [],
+          "samples": [
+            "list my boards",
+            "which boards are connected",
+            "what boards do I have"
+          ]
+        },
+        {
+          "name": "SelectBoardIntent",
+          "slots": [{ "name": "boardName", "type": "AMAZON.SearchQuery" }],
+          "samples": [
+            "switch to {boardName}",
+            "select {boardName}",
+            "show {boardName}"
+          ]
+        },
+        {
+          "name": "UnlinkBoardIntent",
+          "slots": [],
+          "samples": [
+            "forget this board",
+            "disconnect this board"
+          ]
+        },
+        {
+          "name": "UnlinkAllBoardsIntent",
+          "slots": [],
+          "samples": [
+            "forget all boards",
+            "disconnect every board"
+          ]
+        },
+        { "name": "AMAZON.HelpIntent", "samples": [] },
+        { "name": "AMAZON.StopIntent", "samples": [] },
+        { "name": "AMAZON.CancelIntent", "samples": [] },
+        { "name": "AMAZON.FallbackIntent", "samples": [] }
+      ],
+      "types": []
+    }
+  }
+}

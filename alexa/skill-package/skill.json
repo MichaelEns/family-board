@@ -1,0 +1,66 @@
+{
+  "manifest": {
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Family Board",
+          "summary": "A shared family calendar, chores, meals, and lists dashboard.",
+          "description": "Connect one or more Family Boards with four-word owner or sharing codes. On Echo Show, see upcoming calendar events, complete chores, check dinner, and keep a summary widget in the Widget Panel. Viewer codes remain read-only.",
+          "examplePhrases": [
+            "Alexa, open Family Board",
+            "Alexa, ask Family Board which boards are connected",
+            "Alexa, ask Family Board to switch to Grandma's House"
+          ],
+          "keywords": [
+            "family",
+            "calendar",
+            "chores",
+            "meals",
+            "lists"
+          ],
+          "smallIconUri": "https://michaelens.github.io/family-board/alexa/icon-108.png",
+          "largeIconUri": "https://michaelens.github.io/family-board/icon-512.png"
+        }
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Create a board in the web app, pair with its four-word code, then launch on an Echo Show. Verify the dashboard displays upcoming events, chores, and dinner; contributor taps toggle chores and viewer taps do not.",
+      "category": "ORGANIZERS_AND_ASSISTANTS",
+      "distributionCountries": ["US"]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "https://family-board-sync.michaelens.workers.dev/alexa",
+          "sslCertificateType": "Wildcard"
+        },
+        "interfaces": [
+          { "type": "ALEXA_PRESENTATION_APL" },
+          { "type": "ALEXA_DATA_STORE" },
+          {
+            "type": "ALEXA_DATASTORE_PACKAGEMANAGER",
+            "packages": [{ "id": "FamilyBoardSummary" }]
+          },
+          {
+            "type": "ALEXA_EXTENSION",
+            "autoInitializedExtensions": [],
+            "requestedExtensions": [{ "uri": "alexaext:datastore:10" }]
+          }
+        ]
+      }
+    },
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": true,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://michaelens.github.io/family-board/alexa/privacy.html",
+          "termsOfUseUrl": "https://michaelens.github.io/family-board/alexa/terms.html"
+        }
+      }
+    }
+  }
+}

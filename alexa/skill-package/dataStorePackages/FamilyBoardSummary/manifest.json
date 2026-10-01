@@ -1,0 +1,29 @@
+{
+  "packageVersion": "1.0",
+  "packageType": "APL_PACKAGE",
+  "publishingInformation": {
+    "schemaVersion": "1.0",
+    "locales": {
+      "en-US": [
+        {
+          "targetViewport": "WIDGET_M",
+          "metadata": {
+            "name": "Family Board",
+            "description": "See the next event, open chores, and dinner.",
+            "keywords": ["family", "calendar", "chores"],
+            "iconUri": "https://michaelens.github.io/family-board/alexa/widget-icon-450.png",
+            "previews": ["https://michaelens.github.io/family-board/alexa/widget-preview-328x552.png"]
+          }
+        }
+      ]
+    }
+  },
+  "manifest": {
+    "id": "FamilyBoardSummary",
+    "version": "1.0.0",
+    "installStateChanges": "INFORM",
+    "updateStateChanges": "INFORM",
+    "appliesTo": "${viewport.mode == 'HUB'}",
+    "presentationDefinitions": [{ "url": "presentations/default.tpl" }]
+  }
+}

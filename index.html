@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#16213d">
+  <title>Family Board</title>
+  <link rel="manifest" href="/family-board/manifest.webmanifest">
+  <link rel="stylesheet" href="/family-board/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Family Board</p>
+      <h1 id="board-title">Your family, this week</h1>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </header>
+
+  <main>
+    <section id="onboarding" class="panel onboarding">
+      <h2>Connect this home</h2>
+      <p>Create a private board, or enter a four-word owner or sharing code.</p>
+      <label>Board name <input id="new-name" value="Our Family"></label>
+      <button id="create-board" class="primary">Create a board</button>
+      <div class="or">or</div>
+      <label>Four-word code <input id="join-code" placeholder="comet-ewok-brave-moon"></label>
+      <button id="join-board">Connect</button>
+    </section>
+
+    <div id="board" hidden>
+      <nav aria-label="Board sections">
+        <button data-tab="today" class="active">Today</button>
+        <button data-tab="chores">Chores</button>
+        <button data-tab="meals">Meals</button>
+        <button data-tab="lists">Lists</button>
+        <button data-tab="settings">Settings</button>
+      </nav>
+
+      <section id="tab-today" class="tab">
+        <div class="section-heading">
+          <div><p class="eyebrow">Next 14 days</p><h2>Calendar</h2></div>
+          <button id="refresh-events">Refresh</button>
+        </div>
+        <ol id="events" class="timeline"></ol>
+        <form id="event-form" class="editor">
+          <h3>Add a family event</h3>
+          <input id="event-title" required placeholder="Dentist">
+          <div class="two">
+            <input id="event-start" type="datetime-local" required>
+            <input id="event-end" type="datetime-local" required>
+          </div>
+          <button class="primary">Add event</button>
+        </form>
+      </section>
+
+      <section id="tab-chores" class="tab" hidden>
+        <div class="section-heading"><div><p class="eyebrow">Earn stars</p><h2>Chores</h2></div></div>
+        <ul id="chores" class="cards"></ul>
+        <form id="chore-form" class="editor">
+          <input id="chore-title" required placeholder="Put toys away">
+          <div class="two">
+            <select id="chore-person" aria-label="Assigned person"></select>
+            <input id="chore-reward" type="number" min="0" max="1000" value="1" aria-label="Stars">
+          </div>
+          <button class="primary">Add chore</button>
+        </form>
+      </section>
+
+      <section id="tab-meals" class="tab" hidden>
+        <div class="section-heading"><div><p class="eyebrow">This week</p><h2>Meals</h2></div></div>
+        <ul id="meals" class="cards"></ul>
+        <form id="meal-form" class="editor">
+          <div class="two">
+            <input id="meal-date" type="date" required>
+            <input id="meal-name" required placeholder="Tacos">
+          </div>
+          <button class="primary">Plan meal</button>
+        </form>
+      </section>
+
+      <section id="tab-lists" class="tab" hidden>
+        <div class="section-heading"><div><p class="eyebrow">Shared</p><h2>Lists</h2></div></div>
+        <div id="lists"></div>
+        <form id="list-form" class="editor">
+          <input id="list-name" required placeholder="New list name">
+          <button class="primary">Create list</button>
+        </form>
+      </section>
+
+      <section id="tab-settings" class="tab" hidden>
+        <div class="section-heading"><div><p class="eyebrow">Grown-ups</p><h2>Settings</h2></div></div>
+        <div class="panel compact">
+          <p id="access-role"></p>
+          <p class="code-label">Code used on this device</p>
+          <button id="copy-code" class="code"></button>
+          <button id="disconnect" class="danger">Disconnect this device</button>
+        </div>
+
+        <form id="profile-form" class="editor owner-editor">
+          <h3>Family member</h3>
+          <div class="two">
+            <input id="profile-name" required placeholder="Joe">
+            <input id="profile-color" type="color" value="#5f7cff" aria-label="Color">
+          </div>
+          <button class="primary">Add person</button>
+        </form>
+
+        <form id="calendar-form" class="editor owner-only">
+          <h3>Calendar feed</h3>
+          <p>Use a private iCal URL from Google, Outlook, or iCloud. It stays in the board store and is hidden from shared users.</p>
+          <input id="calendar-name" required placeholder="School">
+          <input id="calendar-url" type="url" required placeholder="https://calendar.google.com/calendar/ical/...">
+          <button class="primary">Add calendar</button>
+        </form>
+        <ul id="calendar-feeds" class="cards owner-only"></ul>
+
+        <div class="panel compact owner-only">
+          <h3>Sharing codes</h3>
+          <select id="share-role">
+            <option value="contributor">Can add and change</option>
+            <option value="viewer">Can only view</option>
+          </select>
+          <button id="create-share">Make sharing code</button>
+          <ul id="shares" class="cards"></ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/family-board/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+{
+  "type": "APL",
+  "version": "2024.3",
+  "theme": "dark",
+  "mainTemplate": {
+    "parameters": ["payload"],
+    "items": [
+      {
+        "type": "Container",
+        "width": "100vw",
+        "height": "100vh",
+        "background": "#0d1328",
+        "paddingLeft": "4vw",
+        "paddingRight": "4vw",
+        "paddingTop": "3vh",
+        "paddingBottom": "3vh",
+        "items": [
+          {
+            "type": "Text",
+            "text": "${payload.title}",
+            "fontSize": "6vh",
+            "fontWeight": "700",
+            "color": "#ffffff",
+            "maxLines": 1
+          },
+          {
+            "type": "Text",
+            "text": "${payload.subtitle}",
+            "fontSize": "2.6vh",
+            "color": "#aeb9dc",
+            "maxLines": 1
+          },
+          {
+            "type": "Container",
+            "direction": "row",
+            "grow": 1,
+            "spacing": "2vw",
+            "items": [
+              {
+                "type": "Container",
+                "width": "48%",
+                "items": [
+                  {
+                    "type": "Text",
+                    "text": "Coming up",
+                    "fontSize": "3.2vh",
+                    "fontWeight": "700",
+                    "color": "#7ee8ff"
+                  },
+                  {
+                    "type": "Sequence",
+                    "height": "68vh",
+                    "data": "${payload.events}",
+                    "spacing": "1vh",
+                    "items": [
+                      {
+                        "type": "Container",
+                        "paddingLeft": "1.5vw",
+                        "paddingRight": "1.5vw",
+                        "paddingTop": "1vh",
+                        "paddingBottom": "1vh",
+                        "background": "#202d51",
+                        "borderRadius": "14dp",
+                        "items": [
+                          {
+                            "type": "Text",
+                            "text": "${data.when}",
+                            "fontSize": "2.1vh",
+                            "color": "#ffc93d",
+                            "maxLines": 1
+                          },
+                          {
+                            "type": "Text",
+                            "text": "${data.title}",
+                            "fontSize": "2.7vh",
+                            "fontWeight": "700",
+                            "color": "#ffffff",
+                            "maxLines": 2
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Container",
+                "width": "48%",
+                "items": [
+                  {
+                    "type": "Text",
+                    "text": "Chores",
+                    "fontSize": "3.2vh",
+                    "fontWeight": "700",
+                    "color": "#7ee8ff"
+                  },
+                  {
+                    "type": "Sequence",
+                    "height": "44vh",
+                    "data": "${payload.chores}",
+                    "spacing": "1vh",
+                    "items": [
+                      {
+                        "type": "TouchWrapper",
+                        "disabled": "${!payload.canEdit}",
+                        "onPress": {
+                          "type": "SendEvent",
+                          "arguments": ["toggleChore", "${data.id}"]
+                        },
+                        "item": {
+                          "type": "Container",
+                          "direction": "row",
+                          "alignItems": "center",
+                          "paddingLeft": "1.5vw",
+                          "paddingRight": "1.5vw",
+                          "paddingTop": "1.2vh",
+                          "paddingBottom": "1.2vh",
+                          "background": "${data.done ? '#174d35' : '#202d51'}",
+                          "borderRadius": "14dp",
+                          "items": [
+                            {
+                              "type": "Text",
+                              "text": "${data.done ? '✓' : '○'}",
+                              "fontSize": "3.5vh",
+                              "color": "${data.done ? '#50dc8f' : '#aeb9dc'}",
+                              "width": "4vw"
+                            },
+                            {
+                              "type": "Text",
+                              "text": "${data.title}",
+                              "fontSize": "2.6vh",
+                              "fontWeight": "700",
+                              "color": "#ffffff",
+                              "grow": 1,
+                              "maxLines": 2
+                            },
+                            {
+                              "type": "Text",
+                              "text": "${data.rewardText}",
+                              "fontSize": "2.2vh",
+                              "color": "#ffc93d"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Text",
+                    "text": "Dinner",
+                    "fontSize": "3.2vh",
+                    "fontWeight": "700",
+                    "color": "#7ee8ff",
+                    "spacing": "2vh"
+                  },
+                  {
+                    "type": "Text",
+                    "text": "${payload.dinner}",
+                    "fontSize": "3.2vh",
+                    "fontWeight": "700",
+                    "color": "#ffffff",
+                    "maxLines": 3
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

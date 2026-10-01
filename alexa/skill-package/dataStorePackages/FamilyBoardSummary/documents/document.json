@@ -1,0 +1,69 @@
+{
+  "type": "APL",
+  "version": "2024.3",
+  "theme": "dark",
+  "extensions": [{ "name": "DataStore", "uri": "alexaext:datastore:10" }],
+  "settings": {
+    "DataStore": {
+      "dataBindings": [{
+        "namespace": "FamilyBoard",
+        "key": "summary",
+        "dataBindingName": "BoardSummary",
+        "dataType": "OBJECT"
+      }]
+    }
+  },
+  "mainTemplate": {
+    "parameters": ["payload"],
+    "items": [{
+      "type": "TouchWrapper",
+      "onPress": {
+        "type": "SendEvent",
+        "interactionMode": "OPEN_SKILL",
+        "arguments": ["dashboard"]
+      },
+      "item": {
+        "type": "Container",
+        "width": "100vw",
+        "height": "100vh",
+        "background": "#16213d",
+        "paddingLeft": "24dp",
+        "paddingRight": "24dp",
+        "paddingTop": "24dp",
+        "paddingBottom": "24dp",
+        "justifyContent": "spaceBetween",
+        "items": [
+          {
+            "type": "Text",
+            "text": "${BoardSummary ? BoardSummary.title : payload.title}",
+            "fontSize": "34dp",
+            "fontWeight": "700",
+            "color": "#ffffff",
+            "maxLines": 2
+          },
+          {
+            "type": "Text",
+            "text": "${BoardSummary ? BoardSummary.next : payload.next}",
+            "fontSize": "22dp",
+            "color": "#ffc93d",
+            "maxLines": 3
+          },
+          {
+            "type": "Text",
+            "text": "${BoardSummary ? BoardSummary.chores : payload.chores}",
+            "fontSize": "20dp",
+            "color": "#7ee8ff",
+            "maxLines": 1
+          },
+          {
+            "type": "Text",
+            "text": "Dinner: ${BoardSummary ? BoardSummary.dinner : payload.dinner}",
+            "fontSize": "20dp",
+            "color": "#ffffff",
+            "maxLines": 2
+          }
+        ]
+      }
+    }]
+  }
+}
