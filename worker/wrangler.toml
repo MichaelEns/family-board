@@ -24,7 +24,7 @@ simple = { limit = 60, period = 60 }
 
 [vars]
 ALLOWED_ORIGINS = "https://michaelens.github.io"
-ALEXA_SKILL_ID = "REPLACE_WITH_ALEXA_SKILL_ID"
+ALEXA_SKILL_ID = "amzn1.ask.skill.f4f0cfd5-60c5-458a-b529-cad584c8c294"
 PUBLIC_BASE_URL = "https://family-board-sync.michaelens.workers.dev"
 
 # Configure after creating the Alexa skill:
