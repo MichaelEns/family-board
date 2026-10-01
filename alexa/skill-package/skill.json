@@ -4,13 +4,13 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "name": "Family Board",
+          "name": "Our Household Board",
           "summary": "A shared family calendar, chores, meals, and lists dashboard.",
           "description": "Connect one or more Family Boards with four-word owner or sharing codes. On Echo Show, see upcoming calendar events, complete chores, check dinner, and keep a summary widget in the Widget Panel. Viewer codes remain read-only.",
           "examplePhrases": [
-            "Alexa, open Family Board",
-            "Alexa, ask Family Board which boards are connected",
-            "Alexa, ask Family Board to switch to Grandma's House"
+            "Alexa, open our household board",
+            "Alexa, ask our household board which boards are connected",
+            "Alexa, ask our household board to switch to Grandma's House"
           ],
           "keywords": [
             "family",
@@ -24,7 +24,7 @@
         }
       },
       "isAvailableWorldwide": false,
-      "testingInstructions": "In the Alexa simulator or on an Echo Show, say: \"Alexa, ask Family Board to use board code domino badger leopard cricket.\" Then launch Family Board. The selected board is named \"Family Board Certification\" and contains the open chore \"Put toys away\" worth 2 stars plus a Groceries list containing Milk. On Echo Show, tap the chore and verify it changes to completed; tap again to restore it for the next reviewer. The widget should show the board name and remaining chore count after installation. The code belongs only to this dedicated certification fixture and contains no family data.",
+      "testingInstructions": "In the Alexa simulator or on an Echo Show, say: \"Alexa, ask our household board to use board code domino badger leopard cricket.\" Then say: \"Alexa, open our household board.\" The selected board is named \"Family Board Certification\" and contains the open chore \"Put toys away\" worth 2 stars plus a Groceries list containing Milk. On Echo Show, tap the chore and verify it changes to completed; tap again to restore it for the next reviewer. The widget should show the board name and remaining chore count after installation. The code belongs only to this dedicated certification fixture and contains no family data.",
       "category": "ORGANIZERS_AND_ASSISTANTS",
       "distributionCountries": ["US"]
     },

@@ -23,7 +23,7 @@ Skylight Calendar without a required subscription.
 The Echo Show full-screen experience is still an Alexa skill session. Amazon
 retains control of the device home screen; the widget persists in the Widget
 Panel, while the detailed dashboard opens when the widget is tapped or the user
-says, **"Alexa, open Family Board."** A tablet running the PWA is the better
+says, **"Alexa, open our household board."** A tablet running the PWA is the better
 target when a permanently full-screen wall board is required.
 
 ## Households and sharing
@@ -45,7 +45,7 @@ Example:
 1. Grandma creates **Grandma's House** with its own owner code.
 2. Joe's parent creates a contributor code for **Joe's Family**.
 3. Grandma connects both codes to her Alexa account.
-4. **"Alexa, ask Family Board to switch to Joe's Family"** shows Joe's shared
+4. **"Alexa, ask our household board to switch to Joe's Family"** shows Joe's shared
    board. Switching back shows Grandma's independent events and chores.
 
 ## Concurrency and data safety
@@ -133,7 +133,9 @@ exceeded. See [Durable Objects pricing](https://developers.cloudflare.com/durabl
 ## Deploy the Alexa skill
 
 1. Create a **Custom**, **Provision your own**, **Start from scratch** skill
-   named **Family Board**.
+   named **Our Household Board**. Its invocation is deliberately
+   **our household board** because another vendor already publishes a Luana
+   skill invoked as **family board**.
 2. Deploy [`alexa/skill-package`](alexa/skill-package), including the
    `FamilyBoardSummary` data-store package.
 3. Enable APL, Data Store, Data Store Packages, and the Data Store extension.

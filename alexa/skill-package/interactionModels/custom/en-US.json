@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "family board",
+      "invocationName": "our household board",
       "intents": [
         {
           "name": "LinkBoardIntent",

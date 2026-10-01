@@ -26,6 +26,17 @@ test('PWA shell is complete and precached', () => {
 
 test('Alexa package enables APL and the widget data store', () => {
   const skill = json('alexa/skill-package/skill.json');
+  const model = json(
+    'alexa/skill-package/interactionModels/custom/en-US.json',
+  );
+  assert.equal(
+    model.interactionModel.languageModel.invocationName,
+    'our household board',
+  );
+  assert.equal(
+    skill.manifest.publishingInformation.locales['en-US'].name,
+    'Our Household Board',
+  );
   const interfaces = skill.manifest.apis.custom.interfaces;
   assert.ok(interfaces.some((item) => item.type === 'ALEXA_PRESENTATION_APL'));
   assert.ok(interfaces.some((item) => item.type === 'ALEXA_DATA_STORE'));

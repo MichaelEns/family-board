@@ -355,7 +355,7 @@ export async function handleAlexaEnvelope(envelope, env) {
     }
     if (intent === 'AMAZON.HelpIntent') {
       return response(
-        'Say open Family Board, list my boards, or switch to a board name.',
+        'Say open our household board, list my boards, or switch to a board name.',
         [],
         'What would you like to do?',
       );
