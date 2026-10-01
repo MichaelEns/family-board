@@ -48,7 +48,10 @@ test('Alexa package enables APL and the widget data store', () => {
   const document = json(
     'alexa/skill-package/dataStorePackages/FamilyBoardSummary/documents/document.json',
   );
+  const dashboard = json('alexa/apl/dashboard.json');
   assert.equal(document.extensions[0].uri, 'alexaext:datastore:10');
+  assert.equal(document.version, '1.3');
+  assert.equal(dashboard.version, '1.3');
 });
 
 test('Alexa gallery graphics have required dimensions', () => {
