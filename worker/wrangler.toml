@@ -6,7 +6,7 @@ preview_urls = false
 
 [[kv_namespaces]]
 binding = "CODES"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "3e6dc4a8a19c41cabfb2c65f45240310"
 
 [[durable_objects.bindings]]
 name = "BOARD_OBJECTS"
