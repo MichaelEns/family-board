@@ -97,7 +97,11 @@ async function verifyAlexaRequest(request, rawBody, envelope, expectedSkillId) {
     envelope.context.System.application.applicationId ||
     envelope.session && envelope.session.application &&
     envelope.session.application.applicationId;
-  if (!expectedSkillId || applicationId !== expectedSkillId) {
+  const expectedSkillIds = String(expectedSkillId || '')
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean);
+  if (!expectedSkillIds.includes(applicationId)) {
     throw new AlexaRequestError(403, 'Alexa skill ID did not match.');
   }
 }
